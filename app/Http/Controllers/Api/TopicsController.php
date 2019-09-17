@@ -20,12 +20,21 @@ class TopicsController extends Controller
             ->setStatusCode(201);
     }
 
-    // 修改话题
+    // 编辑话题
     public function update(TopicRequest $request, Topic $topic)
     {
         $this->authorize('update', $topic);
 
         $topic->update($request->all());
         return $this->response->item($topic, new TopicTransformer());
+    }
+
+    // 删除话题
+    public function destroy(Topic $topic)
+    {
+        $this->authorize('destroy', $topic);
+
+        $topic->delete();
+        return $this->response->noContent();
     }
 }

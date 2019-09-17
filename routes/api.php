@@ -79,6 +79,9 @@ $api->version('v1', [
         // 话题列表
         $api->get('topics', 'TopicsController@index')
             ->name('api.topics.index');
+        // 话题详情
+        $api->get('topics/{topic}', 'TopicsController@show')
+            ->name('api.topics.show');
         // 获取某个用户的话题
         $api->get('users/{user}/topics', 'TopicsController@userIndex')
             ->name('api.users.topics.index');

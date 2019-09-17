@@ -22,7 +22,8 @@
         "overtrue/pinyin": "~3.0",
         "predis/predis": "~1.1",
         "spatie/laravel-permission": "~2.29",
-        "summerblue/administrator": "~1.1"
+        "summerblue/administrator": "~1.1",
+        "viacreative/sudo-su": "~1.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "~3.2",
@@ -32,8 +33,7 @@
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^7.5",
-        "summerblue/generator": "~1.0",
-        "viacreative/sudo-su": "~1.1"
+        "summerblue/generator": "~1.0"
     },
     "config": {
         "optimize-autoloader": true,

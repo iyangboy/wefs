@@ -112,6 +112,9 @@ $api->version('v1', [
             // 编辑登录用户信息
             $api->patch('user', 'UsersController@update')
                 ->name('api.user.update');
+            // 小程序编辑登录用户信息（小程序不能使用patch方式）
+            $api->put('user', 'UsersController@update')
+                ->name('api.user.update');
             // 图片资源
             $api->post('images', 'ImagesController@store')
                 ->name('api.images.store');

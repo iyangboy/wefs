@@ -53,6 +53,7 @@ class User extends Authenticatable implements MustVerifyEmailContract, JWTSubjec
         'phone',
         'weixin_openid', 'weixin_unionid',
         'registration_id',
+        'weixin_session_key', 'weapp_openid',
     ];
 
     /**

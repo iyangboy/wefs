@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
@@ -86,6 +87,7 @@ class UsersController extends Controller
         $grid->name('姓名');
         $grid->phone('电话');
         $grid->email('邮箱');
+        $grid->roles('角色')->pluck('name')->label();
         $grid->created_at('注册时间');
         $grid->last_actived_at('最后活跃时间');
 
@@ -136,6 +138,8 @@ class UsersController extends Controller
         $form->password('password', '密码')->placeholder('输入 重置密码');;
         $form->image('avatar', '头像')->move('/uploads/images/avatars/');
         $form->text('introduction', '简介');
+
+        $form->multipleSelect('roles', '角色')->options(Role::all()->pluck('name', 'id'));
 
         //保存前回调
         $form->saving(function (Form $form) {

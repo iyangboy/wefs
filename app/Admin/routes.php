@@ -13,5 +13,9 @@ Route::group([
     $router->get('/', 'HomeController@index');
     // 用户
     $router->resource('users', 'UsersController');
+    // 角色
+    $router->resource('roles', 'RolesController');
+    // 权限
+    $router->resource('permissions', 'PermissionsController');
 
 });

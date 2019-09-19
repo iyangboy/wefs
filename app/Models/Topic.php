@@ -52,9 +52,15 @@ class Topic extends Model
         return route('topics.show', array_merge([$this->id, $this->slug], $params));
     }
 
+    // 获取评论
     public function replies()
     {
         return $this->hasMany(Reply::class);
+    }
+
+    public function topReplies()
+    {
+        return $this->replies()->limit(5);
     }
 
     // 获取评论数
